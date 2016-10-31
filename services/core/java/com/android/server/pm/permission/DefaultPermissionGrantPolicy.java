@@ -972,6 +972,13 @@ public final class DefaultPermissionGrantPolicy {
             grantRuntimePermissions(chromiumPackage, CONTACTS_PERMISSIONS, userId);
             grantRuntimePermissions(chromiumPackage, STORAGE_PERMISSIONS, true, userId);
         }
+        // Google Calendar
+        PackageParser.Package googlecalendarPackage = getSystemPackage("com.google.android.calendar");
+        if (googlecalendarPackage != null && doesPackageSupportRuntimePermissions(googlecalendarPackage)) {
+            grantRuntimePermissions(googlecalendarPackage, CALENDAR_PERMISSIONS, true, userId);
+            grantRuntimePermissions(googlecalendarPackage, CONTACTS_PERMISSIONS, true, userId);
+            grantRuntimePermissions(googlecalendarPackage, PHONE_PERMISSIONS, userId);
+        }
 
         // Mediascanner
         PackageParser.Package mediascannerPackage = getDefaultProviderAuthorityPackage(
