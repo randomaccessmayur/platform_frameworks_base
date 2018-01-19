@@ -986,6 +986,13 @@ public final class DefaultPermissionGrantPolicy {
         if (mediascannerPackage != null) {
             grantRuntimePermissions(mediascannerPackage, STORAGE_PERMISSIONS, true, userId);
         }
+        // Google dialer
+        PackageParser.Package googledialerPackage = getSystemPackage("com.google.android.dialer");
+        if (googledialerPackage != null && doesPackageSupportRuntimePermissions(googledialerPackage)) {
+            grantRuntimePermissions(googledialerPackage, PHONE_PERMISSIONS, true, userId);
+            grantRuntimePermissions(googledialerPackage, CONTACTS_PERMISSIONS, true, userId);
+            grantRuntimePermissions(googledialerPackage, SMS_PERMISSIONS, userId);
+        }
 
         // Google Markup
         PackageParser.Package googlemarkupPackage = getSystemPackage("com.google.android.markup");
