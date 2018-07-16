@@ -139,8 +139,7 @@
 	  <item>com.facebook.mlite</item>
 	  <item>com.facebook.katana</item>
 	  <item>com.facebook.lite</item>
-	  <item>com.Slack</item>
-	  
+	  <item>com.Slack</item>	  
 	</string-array>
 
     <!-- Whether the device supports Smart Pixels -->
@@ -158,4 +157,7 @@
 
     <!-- Whether device supports internal audio recording -->
     <bool name="config_hasInternalAudioRecordingSupport">true</bool>
+
+    <!-- Whether device ignores the RSSNR signal implementation -->
+    <bool name="config_ignoreRssnrSignalLevel">false</bool>
 </resources>
